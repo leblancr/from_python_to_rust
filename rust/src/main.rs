@@ -1,29 +1,24 @@
 fn main() {
-    // scope
-    // This binding lives in the main function
-    let long_lived_binding = 1;
 
-    // This is a block, and has a smaller scope than the main function
-    {
-        // This binding only exists in this block
-        let short_lived_binding = 2;
+    let x = 1;
+    println!("x: {}", x);
+    // binds x again, shadowing the old one from above
+    let x = 'i';
+    println!("x: {}", x);
 
-        println!("inner short: {}", short_lived_binding);
+    // declare, initialize
+    let something;
+    let x = 5;
+    //println!("x, something: {}, {}", x, something);  // something needs initialization
+    something = x * 5;
+    println!("x, something: {}, {}", x, something);
 
-        // This binding *shadows* the outer one
-        let long_lived_binding = 5_f32;
+    // Mutability
+    let mut y = 0;
+    y = y * 2 + x;
+    dbg!(y);
 
-        println!("inner long: {}", long_lived_binding);
-    }
-    // End of the block
-
-    // Error! `short_lived_binding` doesn't exist in this scope
-    //println!("outer short: {}", short_lived_binding);
-
-    println!("outer long: {}", long_lived_binding);
-
-    // This binding also *shadows* the previous binding
-    let long_lived_binding = 'a';
-
-    println!("outer long: {}", long_lived_binding);
+    const blah: i32 = 42;
+    y *= blah;
+    dbg!(y);
 }
