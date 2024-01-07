@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "01-numbers"
+name = "python_code"
 version = "0.1.0"
 description = ""
-authors = ["rich <rich.leblanc1@proton.me>"]
+authors = ["rich leblanc <rich.leblanc1@proton.me>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
